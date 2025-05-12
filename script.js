@@ -14,6 +14,7 @@ const btnHold = document.querySelector('.btn--hold');
 const dicesfx = new Audio('dice-roll.mp3');
 const holdsfx = new Audio('hold.mp3');
 const reset = new Audio('reset.mp3');
+const win = new Audio('win.mp3');
 
 
 
@@ -119,11 +120,13 @@ btnHold.addEventListener('click', function () {
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
         //Check if players score is already >= 100
         //If true finish the game
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 20) {
             playing = false;
             diceEl.classList.add('hidden');
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+            document.querySelector(`#score--${activePlayer}`).style.color = 'white';
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+            win.play();
         } else {
             switchPlayer();
         }
