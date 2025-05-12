@@ -11,6 +11,15 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const dicesfx = new Audio('dice-roll.mp3');
+const holdsfx = new Audio('hold.mp3');
+const reset = new Audio('reset.mp3');
+
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 //Starting condition
 
@@ -37,6 +46,8 @@ const init = function () {
     player0El.classList.add('player--active');
     player1El.classList.remove('player--active');
 
+    reset.play();
+
 }
 init();
 
@@ -51,16 +62,18 @@ const switchPlayer = function () {
 
 //Rolling dice functionality
 btnRoll.addEventListener('click', function () {
+
     if (playing) {
         //1. Generating a random dice roll 
         const dice = Math.trunc(Math.random() * 6) + 1;
-
+        dicesfx.play();
         //2. Display dice
         diceEl.classList.remove('hidden');
         diceEl.src = `dice-${dice}.png`;
 
         //3. Check for rolled 1: if true, switch to next player
         if (dice !== 1) {
+            dicesfx.play();
             //Add dice to the current score
             currentScore += dice;
             document.getElementById(`current--${activePlayer}`).textContent = currentScore;
@@ -75,7 +88,7 @@ btnRoll.addEventListener('click', function () {
 });
 
 btnHold.addEventListener('click', function () {
-
+    holdsfx.play();
     if (playing) {
         //Add current score to the active player's score
         scores[activePlayer] += currentScore;
