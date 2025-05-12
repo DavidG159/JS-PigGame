@@ -16,6 +16,8 @@ const holdsfx = new Audio('hold.mp3');
 const reset = new Audio('reset.mp3');
 
 
+
+const rules = document.querySelector('.btn-rules');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
@@ -25,6 +27,18 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 let scores, currentScore, activePlayer, playing;
 
+
+const closeModal = function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+
+const openModal = function () {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
+
+rules.addEventListener('click', openModal);
 
 const init = function () {
     scores = [0, 0];

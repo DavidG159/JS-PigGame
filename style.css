@@ -235,7 +235,7 @@ main {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
-  font-size: 20px;
+  font-size: 60px;
   color: #333;
   cursor: pointer;
   border: none;
@@ -274,4 +274,11 @@ main {
 .modaltext {
   font-family: inherit;
   font-size: 1.8rem;
+  line-height: 3.2;
+}
+
+.modal h1 {
+  font-size: 4rem;
+  text-align: center;
+  line-height: 3.8;
 }
