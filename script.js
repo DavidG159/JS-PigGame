@@ -35,10 +35,20 @@ const closeModal = function () {
 
 const openModal = function () {
     modal.classList.remove('hidden');
+    console.log('test');
     overlay.classList.remove('hidden');
 }
 
 rules.addEventListener('click', openModal);
+overlay.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden'))
+        closeModal();
+
+});
+
 
 const init = function () {
     scores = [0, 0];
