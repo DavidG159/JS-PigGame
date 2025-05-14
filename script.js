@@ -24,6 +24,8 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
+let highscore = document.querySelector('.highscore-num');
+
 //Starting condition
 
 let scores, currentScore, activePlayer, playing;
@@ -71,7 +73,7 @@ const init = function () {
     player0El.classList.add('player--active');
     player1El.classList.remove('player--active');
 
-    reset.play();
+
 
 }
 init();
@@ -126,6 +128,7 @@ btnHold.addEventListener('click', function () {
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`#score--${activePlayer}`).style.color = 'white';
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+
             win.play();
         } else {
             switchPlayer();

@@ -132,7 +132,7 @@ main {
 }
 
 .btn--new {
-  top: 4rem;
+  top: 9.2rem;
 }
 
 .btn--new:hover {
@@ -283,4 +283,36 @@ main {
   font-size: 4rem;
   text-align: center;
   line-height: 3.8;
+}
+
+.top-box {
+  background-color: #ECEFCA;
+  opacity: 0.8;
+  border-radius: 9px;
+  position: absolute;
+  top: 1%;
+  left: 39.8%;
+
+  padding: 2rem;
+  text-align: center;
+  width: 20%;
+  height: 13%;
+}
+
+.highscore {
+  position: relative;
+  left: 0;
+  bottom: 1.2rem;
+
+  font-family: inherit;
+  font-size: 1.8rem;
+
+}
+
+.highscore-num {
+  position: relative;
+  left: 0;
+  bottom: 2rem;
+  font-family: inherit;
+  font-size: 4rem;
 }
